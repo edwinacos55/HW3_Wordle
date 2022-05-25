@@ -9,28 +9,29 @@ function Keyboard() {
 
     const {onEnter, onDelete, onSelectLetter} =useContext(AppContext);
 
-    const handleKeyboard= useCallback((event) => {
-        if(event.key=== "Enter") {
+    const handleKeyboard= useCallback ((event) => {
+        if (event.key==="Enter") {
             onEnter()
-        } else if(event.key=== "Backspace") {
+        } else if(event.key==="Backspace") {
             onDelete()
-        } else{
-            key1.forEach(() => {
-                if(event.Key.toLowerCase() === key.toLowerCase()) {
+        } else {
+            key1.forEach((key) => {
+                if (event.key.toLowerCase()===key.toLowerCase()) {
                     onSelectLetter(key)
                 }
-            })
-            key2.forEach(() => {
-                if(event.Key.toLowerCase() === key.toLowerCase()) {
+            });
+            key2.forEach((key) => {
+                if (event.key.toLowerCase()===key.toLowerCase()) {
                     onSelectLetter(key)
                 }
-            })
-            key3.forEach(() => {
-                if(event.Key.toLowerCase() === key.toLowerCase()) {
+            });
+            key3.forEach((key) => {
+                if (event.key.toLowerCase()===key.toLowerCase()) {
                     onSelectLetter(key)
                 }
-            })
+            });
         }
+
     })
 
     useEffect(() => {

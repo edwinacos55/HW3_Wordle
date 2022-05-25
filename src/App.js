@@ -9,6 +9,7 @@ export const AppContext= createContext();
 function App() {
   const[board, setBoard] =useState (boardDefault); 
   const [currentAttempt, setCurrentAttempt] = useState({attempt: 0, letterIndex: 0})
+  const correctWord= "REACT";
 
   const onSelectLetter =(keyVal) => {
     if (currentAttempt.letterIndex > 4) return;
@@ -33,7 +34,7 @@ function App() {
       <nav>
       <h1>Wordle</h1>
       </nav>
-      <AppContext.Provider value={{board, setBoard, currentAttempt, setCurrentAttempt, onDelete, onEnter, onSelectLetter}}>
+      <AppContext.Provider value={{board, setBoard, currentAttempt, setCurrentAttempt, onDelete, onEnter, onSelectLetter, correctWord}}>
         <div className="game">
 <GameBoard />
 <Keyboard />
